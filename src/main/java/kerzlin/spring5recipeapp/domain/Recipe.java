@@ -1,6 +1,7 @@
 package kerzlin.spring5recipeapp.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -14,6 +15,8 @@ public class Recipe {
   private String source;
   private String url;
   private String directions;
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe") // target property on igridient class
+  private Set<Ingridient> ingridients;
   @Lob
   private Byte[] image;
 
