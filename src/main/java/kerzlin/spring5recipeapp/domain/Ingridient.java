@@ -1,15 +1,28 @@
 package kerzlin.spring5recipeapp.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 public class Ingridient {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
   private String description;
   private BigDecimal amount;
   @ManyToOne
   private Recipe recipe;
+
+  @OneToOne(fetch = FetchType.EAGER)
+  private UnitOfMeasure uof;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public String getDescription() {
     return description;
@@ -33,5 +46,13 @@ public class Ingridient {
 
   public void setRecipe(Recipe recipe) {
     this.recipe = recipe;
+  }
+
+  public UnitOfMeasure getUof() {
+    return uof;
+  }
+
+  public void setUof(UnitOfMeasure uof) {
+    this.uof = uof;
   }
 }
