@@ -59,7 +59,8 @@ public class IndexControllerTest {
    //     recipes.add(recipe1);
         // adding functionality
         when(recipeService.getRecipes()).thenReturn(recipes);
-
+       // ArgumentCaptor allows us to capture an argument passed to a method in order to inspect it.
+        //This is especially useful when we can't access the argument outside of the method we'd like to test.
         ArgumentCaptor<Set<Recipe>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
         //when
         String viewName = controller.getIndexPage(model);
