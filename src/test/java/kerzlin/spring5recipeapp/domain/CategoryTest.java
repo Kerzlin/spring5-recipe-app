@@ -9,6 +9,10 @@ class CategoryTest {
 
   Category category;
 
+  public CategoryTest(Category category) {
+    this.category = category;
+  }
+
   @Before
   public void setUp(){
     category = new Category();
