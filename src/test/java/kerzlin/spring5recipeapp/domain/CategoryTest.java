@@ -5,12 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-class CategoryTest {
+public class CategoryTest {
 
   Category category;
 
-  public CategoryTest(Category category) {
-    this.category = category;
+  public CategoryTest() {
   }
 
   @Before
