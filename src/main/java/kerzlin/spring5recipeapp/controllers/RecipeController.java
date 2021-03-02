@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-
+// ovo je kontroler
 @Slf4j
 @Controller
 public class RecipeController {
