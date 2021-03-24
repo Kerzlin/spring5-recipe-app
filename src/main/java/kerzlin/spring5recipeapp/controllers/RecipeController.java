@@ -1,6 +1,7 @@
 package kerzlin.spring5recipeapp.controllers;
 
 import kerzlin.spring5recipeapp.commands.RecipeCommand;
+import kerzlin.spring5recipeapp.domain.Recipe;
 import kerzlin.spring5recipeapp.exceptions.NotFoundException;
 import kerzlin.spring5recipeapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +13,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Collections;
 
+// ovo je kontroler 1
 @Slf4j
 @Controller
 public class RecipeController {
@@ -26,6 +30,7 @@ public class RecipeController {
     @GetMapping("/recipe/{id}/show")
     public String showById(@PathVariable String id, Model model) {
       model.addAttribute("recipe", recipeService.findById(new Long(id)));
+        Collections.sort(new ArrayList<Recipe>());
       return "recipe/show";
     }
 

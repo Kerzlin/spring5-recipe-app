@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-public class Recipe {
+public class Recipe implements Comparable<Recipe> {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -48,6 +48,11 @@ public class Recipe {
     ingredient.setRecipe(this);
     this.ingredients.add(ingredient);
     return this;
+  }
+
+  @Override
+  public int compareTo(Recipe recipe) {
+    return this.getDescription().compareTo(recipe.getDescription());
   }
 
 }
