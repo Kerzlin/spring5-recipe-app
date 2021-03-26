@@ -3,6 +3,9 @@ package kerzlin.spring5recipeapp.domain;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.Assert.assertEquals;
 
 public class CategoryTest {
@@ -28,10 +31,18 @@ public class CategoryTest {
 
   @Test
   public void getDescription() throws Exception {
+    String desc = "Description";
+    category.setDescription(desc);
+    assertEquals(desc, category.getDescription());
   }
 
   @Test
   public void getRecipes() throws Exception {
+    Recipe recipe = new Recipe();
+    Set<Recipe> recipes = new HashSet<>();
+    recipes.add(recipe);
+    category.setRecipes(recipes);
+    assertEquals(recipes, category.getRecipes());
   }
 
 }

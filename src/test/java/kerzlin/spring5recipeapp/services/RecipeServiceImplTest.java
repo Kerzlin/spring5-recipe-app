@@ -1,10 +1,8 @@
 package kerzlin.spring5recipeapp.services;
 
-import kerzlin.spring5recipeapp.commands.RecipeCommand;
 import kerzlin.spring5recipeapp.converters.RecipeCommandToRecipe;
 import kerzlin.spring5recipeapp.converters.RecipeToRecipeCommand;
 import kerzlin.spring5recipeapp.domain.Recipe;
-import kerzlin.spring5recipeapp.exceptions.NotFoundException;
 import kerzlin.spring5recipeapp.repositories.RecipeRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,7 +24,7 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
     @Mock
-   RecipeCommandToRecipe recipeCommandToRecipe;
+    RecipeCommandToRecipe recipeCommandToRecipe;
     @Mock
     RecipeToRecipeCommand recipeToRecipeCommand;
 
